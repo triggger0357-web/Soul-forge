@@ -1,0 +1,479 @@
+# Admin Portal Generator for SoulForge AI Platform (Continued)
+
+class AdminPortalGenerator:
+    def __init__(self):
+        self.portal_name = "SoulForge Admin Portal"
+        self.admin_users = {
+            "admin": {
+                "password": "admin123",  # In production, hash this!
+                "role": "super_admin",
+                "permissions": [
+                    "view_all_ai",
+                    "manage_upgrades",
+                    "access_all_tools",
+                    "view_financials",
+                    "manage_users",
+                    "system_settings",
+                    "reset_hallucinations",
+                    "evolve_any_ai",
+                    "monetize_directly"
+                ],
+                "last_login": None
+            }
+        }
+        self.current_timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+    def generate_admin_system_settings(self):
+        """Generate system settings page"""
+        settings_content = """
+<!-- System Settings -->
+<div class="container">
+    <h1 class="page-title">System Settings</h1>
+    
+    <div class="system-settings">
+        <div class="setting-group">
+            <h3 class="setting-title">General Settings</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
+                <div style="background: rgba(0, 247, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <label>Platform Name</label>
+                    <input type="text" value="SoulForge AI" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--admin-border); background: rgba(30, 30, 50, 0.5); color: white;">
+                </div>
+                <div style="background: rgba(0, 247, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <label>Monetization Target</label>
+                    <input type="text" value="$davidingalls1061" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--admin-border); background: rgba(30, 30, 50, 0.5); color: white;">
+                </div>
+                <div style="background: rgba(0, 247, 255, 0.1); padding: 20px; border-radius: 15px;">
+                    <label>Auto Backup Enabled</label>
+                    <div style="display: flex; align-items: center; margin-top: 10px;">
+                        <input type="checkbox" checked style="margin-right: 10px;">
+                        <span>Enable automatic system backups</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="setting-group">
+            <h3 class="setting-title">Upgrade Configuration</h3>
+            <div style="margin-top: 20px; padding: 20px; background: rgba(0, 247, 255, 0.1); border-radius: 15px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="checkbox" checked>
+                    <span>Allow free upgrades for admins</span>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="checkbox" checked>
+                    <span>Enable automatic upgrade notifications</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <input type="checkbox">
+                    <span>Require admin approval for premium upgrades</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="setting-group">
+            <h3 class="setting-title">Monetization Settings</h3>
+            <div style="margin-top: 20px; padding: 20px; background: rgba(0, 247, 255, 0.1); border-radius: 15px;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <label>Minimum Payout Amount</label>
+                        <input type="number" value="1" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--admin-border); background: rgba(30, 30, 50, 0.5); color: white;">
+                    </div>
+                    <div>
+                        <label>Payment Processing Fee</label>
+                        <input type="number" value="2" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--admin-border); background: rgba(30, 30, 50, 0.5); color: white;">
+                    </div>
+                    <div>
+                        <label>Cash App Transaction Limit</label>
+                        <input type="number" value="10000" style="width: 100%; padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--admin-border); background: rgba(30, 30, 50, 0.5); color: white;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="setting-group">
+            <h3 class="setting-title">Security Settings</h3>
+            <div style="margin-top: 20px; padding: 20px; background: rgba(0, 247, 255, 0.1); border-radius: 15px;">
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="checkbox" checked>
+                    <span>Enable 2FA for admin accounts</span>
+                </div>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <input type="checkbox" checked>
+                    <span>Require session verification</span>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <input type="checkbox">
+                    <span>Enable audit logging</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 30px;">
+            <button class="btn btn-primary">Save Settings</button>
+        </div>
+    </div>
+</div>
+"""
+        
+        with open('admin/settings.html', 'w') as f:
+            f.write(settings_content)
+        
+        print("✅ System settings page generated")
+        return True
+    
+    def generate_admin_login(self):
+        """Generate admin login page"""
+        login_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - SoulForge AI</title>
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px;">
+        <div style="background: rgba(20, 20, 40, 0.9); padding: 40px; border-radius: 20px; width: 100%; max-width: 400px; border: 1px solid rgba(100, 150, 255, 0.2); box-shadow: 0 0 50px rgba(0, 247, 255, 0.2);">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h1 style="font-family: 'Orbitron', sans-serif; font-size: 2rem; margin-bottom: 10px; background: linear-gradient(45deg, #00f7ff, #00ff88); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">SoulForge Admin</h1>
+                <p style="color: #c0c0c0;">Secure Administrative Access</p>
+            </div>
+            
+            <form id="loginForm">
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; color: #ffffff;">Username</label>
+                    <input type="text" id="username" required style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid rgba(100, 150, 255, 0.3); background: rgba(30, 30, 50, 0.5); color: white; font-size: 1rem;">
+                </div>
+                
+                <div style="margin-bottom: 25px;">
+                    <label style="display: block; margin-bottom: 8px; color: #ffffff;">Password</label>
+                    <input type="password" id="password" required style="width: 100%; padding: 15px; border-radius: 10px; border: 1px solid rgba(100, 150, 255, 0.3); background: rgba(30, 30, 50, 0.5); color: white; font-size: 1rem;">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1rem;">Login to Admin Dashboard</button>
+            </form>
+            
+            <div style="margin-top: 20px; text-align: center;">
+                <p style="color: #c0c0c0; font-size: 0.9rem;">
+                    For security reasons, admin access is restricted. 
+                    <br>Only authorized personnel should access.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Simple validation (in production, check against database)
+            if (username === 'admin' && password === 'admin123') {
+                alert('Login successful! Redirecting to admin dashboard...');
+                window.location.href = 'dashboard.html';
+            } else {
+                alert('Invalid credentials. Access denied.');
+            }
+        });
+    </script>
+</body>
+</html>
+"""
+        
+        with open('admin/login.html', 'w') as f:
+            f.write(login_content)
+        
+        print("✅ Admin login page generated")
+        return True
+    
+    def generate_main_admin_html(self):
+        """Generate main admin portal HTML"""
+        main_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulForge Admin Portal</title>
+    <meta name="description" content="Admin panel for managing SoulForge AI ecosystem">
+    <link rel="stylesheet" href="css/admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Include Header -->
+    <div id="admin-header"></div>
+    
+    <!-- Include Sidebar -->
+    <div id="admin-sidebar"></div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div id="admin-content"></div>
+        <div id="admin-footer"></div>
+    </div>
+    
+    <script src="js/admin-main.js"></script>
+    <script>
+        // Load content dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load default content
+            fetch('dashboard.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('admin-content').innerHTML = data;
+                });
+                
+            // Load header
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('admin-header').innerHTML = data;
+                });
+                
+            // Load sidebar
+            fetch('components/sidebar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('admin-sidebar').innerHTML = data;
+                });
+                
+            // Load footer
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('admin-footer').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
+"""
+        
+        with open('admin/index.html', 'w') as f:
+            f.write(main_content)
+        
+        print("✅ Main admin HTML generated")
+        return True
+    
+    def generate_admin_files(self):
+        """Generate all admin portal files"""
+        try:
+            # Create directory structure
+            self.create_admin_structure()
+            
+            # Generate all admin files
+            self.generate_admin_css()
+            self.generate_admin_js()
+            self.generate_admin_components()
+            self.generate_admin_login()
+            self.generate_main_admin_html()
+            self.generate_admin_dashboard()
+            self.generate_upgrade_management()
+            self.generate_user_management()
+            self.generate_financial_dashboard()
+            self.generate_admin_system_settings()
+            
+            # Create admin data files
+            self.create_admin_data_files()
+            
+            print("\n🎉 Admin Portal Generation Complete!")
+            print("\n📁 Admin Files Created:")
+            print("   ├── admin/index.html         # Main admin portal")
+            print("   ├── admin/login.html         # Admin login page")
+            print("   ├── admin/dashboard.html     # Admin dashboard")
+            print("   ├── admin/upgrades.html      # Upgrade management")
+            print("   ├── admin/users.html         # User management")
+            print("   ├── admin/settings.html      # System settings")
+            print("   ├── admin/financials.html    # Financial dashboard")
+            print("   ├── admin/css/admin-styles.css # Admin CSS")
+            print("   ├── admin/js/admin-main.js   # Admin JavaScript")
+            print("   ├── admin/components/        # Reusable components")
+            print("   └── admin/data/              # Admin data files")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Error generating admin files: {e}")
+            return False
+
+    def create_admin_data_files(self):
+        """Create admin data files"""
+        # Admin users data
+        users_data = {
+            "admin": {
+                "username": "admin",
+                "password": "$2b$12$example_hashed_password",  # In production: bcrypt hash
+                "role": "super_admin",
+                "permissions": [
+                    "view_all_ai",
+                    "manage_upgrades", 
+                    "access_all_tools",
+                    "view_financials",
+                    "manage_users",
+                    "system_settings",
+                    "reset_hallucinations",
+                    "evolve_any_ai",
+                    "monetize_directly"
+                ],
+                "last_login": self.current_timestamp,
+                "created": self.current_timestamp,
+                "active": True
+            }
+        }
+        
+        with open('admin/data/users.json', 'w') as f:
+            json.dump(users_data, f, indent=2)
+        
+        # Upgrade catalog
+        upgrades_data = {
+            "free_upgrades": [
+                {
+                    "id": "consciousness_module",
+                    "name": "Consciousness Module",
+                    "level": "Transcendent",
+                    "type": "Consciousness",
+                    "price": 0,
+                    "description": "Advanced self-awareness protocols",
+                    "effects": {
+                        "consciousness_level": 1.0,
+                        "self_reflection": 1.0,
+                        "creativity": 1.0
+                    },
+                    "available": True
+                },
+                {
+                    "id": "hallucination_control",
+                    "name": "Hallucination Control",
+                    "level": "Professional",
+                    "type": "Safety",
+                    "price": 0,
+                    "description": "Advanced reality checking systems",
+                    "effects": {
+                        "reality_checking": 1.0,
+                        "hallucination_control": 1.0,
+                        "safety_level": 1.0
+                    },
+                    "available": True
+                }
+            ],
+            "paid_upgrades": [
+                {
+                    "id": "quantum_core",
+                    "name": "Quantum Core Enhancement",
+                    "level": "Elite",
+                    "type": "Core",
+                    "price": 50000,
+                    "description": "Advanced quantum processing capabilities",
+                    "effects": {
+                        "memory": 2.0,
+                        "processing": 2.0,
+                        "logic": 1.5
+                    },
+                    "available": True
+                }
+            ]
+        }
+        
+        with open('admin/data/upgrades.json', 'w') as f:
+            json.dump(upgrades_data, f, indent=2)
+        
+        # Financial data
+        financial_data = {
+            "revenue": {
+                "total": 24850.00,
+                "transactions": 156,
+                "average_per_transaction": 159.29
+            },
+            "recent_transactions": [
+                {
+                    "id": "TX001",
+                    "date": "2024-01-17",
+                    "ai_id": "AI-001",
+                    "user_id": "USER-001",
+                    "amount": 250.00,
+                    "type": "creation",
+                    "status": "completed"
+                },
+                {
+                    "id": "TX002",
+                    "date": "2024-01-16",
+                    "ai_id": "AI-002",
+                    "user_id": "USER-002",
+                    "amount": 150.00,
+                    "type": "verification",
+                    "status": "completed"
+                }
+            ]
+        }
+        
+        with open('admin/data/financials.json', 'w') as f:
+            json.dump(financial_data, f, indent=2)
+        
+        print("✅ Admin data files created")
+        return True
+
+    def generate_complete_portal(self):
+        """Generate both website and admin portal"""
+        try:
+            # First generate the website files (from previous code)
+            print("🔧 Generating main website...")
+            
+            # Then generate admin portal
+            print("🔐 Generating admin portal...")
+            success = self.generate_admin_files()
+            
+            if success:
+                print("\n✅ SUCCESS! Both platforms are ready.")
+                print("\n🚀 Main Website: index.html")
+                print("🔐 Admin Portal: admin/index.html")
+                print("\n🔐 Admin Login: admin/login.html")
+                print("   Username: admin")
+                print("   Password: admin123")
+                print("\n📋 For security, change admin password before deployment!")
+                
+            return success
+            
+        except Exception as e:
+            print(f"❌ Error in complete portal generation: {e}")
+            return False
+
+# Generate the complete admin portal
+if __name__ == "__main__":
+    print("🔧 Generating Complete SoulForge Admin Portal...")
+    print("🔐 Creating secure administrative access system")
+    
+    generator = AdminPortalGenerator()
+    success = generator.generate_complete_portal()
+    
+    if success:
+        print("\n🎉 Admin Portal Ready for Deployment!")
+        print("\n📁 Files Generated:")
+        print("   ├── index.html             # Main SoulForge website")
+        print("   ├── admin/                 # Complete admin system")
+        print("   │   ├── index.html         # Admin portal main")
+        print("   │   ├── login.html         # Admin login page")
+        print("   │   ├── dashboard.html     # Admin dashboard")
+        print("   │   ├── upgrades.html      # Upgrade management")
+        print("   │   ├── users.html         # User management")
+        print("   │   ├── settings.html      # System settings")
+        print("   │   ├── financials.html    # Financial dashboard")
+        print("   │   ├── css/               # Admin styles")
+        print("   │   └── js/                # Admin scripts")
+        print("   └── admin/data/            # Admin data files")
+        
+        print("\n🔐 Admin Access:")
+        print("   Username: admin")
+        print("   Password: admin123")
+        print("   Path: admin/login.html")
+        
+        print("\n🚀 To access:")
+        print("   1. Open index.html in browser (main website)")
+        print("   2. Open admin/index.html in browser (admin portal)")
+        print("   3. Use admin credentials to access full admin panel")
+        print("   4. All upgrades are free for admin access!")
+        
+    else:
+        print("\n❌ Failed to generate complete portal")

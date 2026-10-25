@@ -1,0 +1,5 @@
+bash
+
+cd {self.website_folder}
+python server.py
+

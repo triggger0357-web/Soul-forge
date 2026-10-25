@@ -1,0 +1,19 @@
+
+# How to Access Your Soul Forge AI Platform
+
+## 🚀 QUICK START INSTRUCTIONS
+
+### **Method 1: Direct Browser Access** (Easiest)
+1. **Locate the Files**:
+   - Navigate to the `website` folder in your project directory
+   - Find `index.html` file
+
+2. **Open in Browser**:
+   - Double-click `index.html` to open in your default browser
+   - Or right-click → "Open with" → Chrome/Firefox/Safari
+
+### **Method 2: Local Development Server**
+1. **Open Terminal** in website folder:
+```bash
+cd website
+python server.py

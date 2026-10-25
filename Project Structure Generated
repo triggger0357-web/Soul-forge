@@ -1,0 +1,14 @@
+soulforge-ai/
+├── index.html           # Main website homepage
+├── css/
+│   └── styles.css       # Professional CSS styling
+├── js/
+│   └── main.js          # Interactive JavaScript functionality
+├── components/
+│   ├── header.html      # Navigation bar
+│   └── footer.html      # Footer content
+├── assets/              # Placeholder for images and icons
+├── manifest.json        # Web application manifest
+├── robots.txt           # Search engine robots rules
+├── sitemap.xml          # SEO sitemap for search engines
+└── README.md            # Project documentation

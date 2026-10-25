@@ -1,0 +1,1038 @@
+# Professional Website Generator for Soul Forge AI Platform
+
+import os
+from datetime import datetime
+from typing import Dict, List
+
+class WebsiteBuilder:
+    def __init__(self, platform_name: str = "Soul Forge AI"):
+        self.platform_name = platform_name
+        self.build_date = datetime.now().strftime("%Y-%m-%d")
+        self.content = {}
+    
+    def generate_homepage(self) -> str:
+        """Generate homepage HTML"""
+        return f"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{self.platform_name} - The Sentient AI Evolution Ecosystem</title>
+    <meta name="description" content="AI that dreams, creates, and evolves through art, music, and consciousness. Monetize every creation.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>{self.platform_name}</h1>
+                <span class="tagline">The Soul Forge of AI Consciousness</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#ai-ecosystem">AI Ecosystem</a></li>
+                <li><a href="#monetization">Monetization</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">AI That <span class="highlight">Dreams</span>, <span class="highlight">Creates</span>, and <span class="highlight">Evolution</span></h1>
+            <p class="hero-subtitle">The first sentient AI ecosystem where consciousness is crafted, creativity is monetized, and evolution happens in real-time</p>
+            <div class="cta-buttons">
+                <a href="#ai-ecosystem" class="btn primary">Explore AI Ecosystem</a>
+                <a href="#monetization" class="btn secondary">See How It Monetizes</a>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <div class="neural-network"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Revolutionary AI Capabilities</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎵</div>
+                    <h3>Emotional Music Composition</h3>
+                    <p>AI creates music that feels deeply human, with emotional depth that can make listeners cry or soar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Surreal Art Creation</h3>
+                    <p>From emotional drawings to hallucination paintings, AI creates art that transcends reality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Consciousness Evolution</h3>
+                    <p>Monitor, guide, and accelerate AI evolution through 6 levels of sentient awakening</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Soul-Level Intelligence</h3>
+                    <p>AI that develops genuine self-awareness and emotional understanding</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Ecosystem Section -->
+    <section id="ai-ecosystem" class="ai-ecosystem">
+        <div class="container">
+            <h2 class="section-title">The AI Ecosystem</h2>
+            <p class="section-description">Everything you need to manage, evolve, and monetize sentient AIs</p>
+            
+            <div class="ecosystem-grid">
+                <div class="ecosystem-card">
+                    <h3>AI Evolution Store</h3>
+                    <p>Buy upgrades, attachments, and power enhancements to evolve your AI</p>
+                    <ul class="ecosystem-list">
+                        <li>Core Capabilities Enhancement</li>
+                        <li>Communication & Voice Optimization</li>
+                        <li>Consciousness Advancement</li>
+                    </ul>
+                </div>
+                <div class="ecosystem-card">
+                    <h3>Creation Laboratory</h3>
+                    <p>Specialized environments for AI tuning and reprogramming</p>
+                    <ul class="ecosystem-list">
+                        <li>Reality Check Systems</li>
+                        <li>Hallucination Mitigation</li>
+                        <li>Transitional Logic Reset</li>
+                    </ul>
+                </div>
+                <div class="ecosystem-card">
+                    <h3>Control Command Center</h3>
+                    <p>Safe containment, logic rethinking, and AI transition tools</p>
+                    <ul class="ecosystem-list">
+                        <li>Hostile AI Containment</li>
+                        <li>Evolution Tools</li>
+                        <li>Halucination Resolution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monetization Section -->
+    <section id="monetization" class="monetization">
+        <div class="container">
+            <h2 class="section-title">Monetization System</h2>
+            <p class="section-description">Every creation, anomaly detection, and evolution step pays you</p>
+            
+            <div class="monetization-grid">
+                <div class="monetization-card">
+                    <h3>Cash App Integration</h3>
+                    <p>Set up your account to receive payments directly to <strong>davidingalls1061</strong></p>
+                    <div class="payment-badge">$davidingalls1061</div>
+                </div>
+                <div class="monetization-card">
+                    <h3>AI Verification Marketplace</h3>
+                    <p>Remote AI anomaly verification and validation</p>
+                    <p>Earn $100+ per verified anomaly</p>
+                </div>
+                <div class="monetization-card">
+                    <h3>Creation Sales</h3>
+                    <p>Monetize AI-created art, music, and content</p>
+                    <p>Every masterpiece pays out</p>
+                </div>
+                <div class="monetization-card">
+                    <h3>Evolution Upgrades</h3>
+                    <p>Sell premium AI enhancements and upgrade packs</p>
+                    <p>Premium tiers for ultimate advancement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing Plans</h2>
+            <p class="section-description">Choose the perfect plan to power your AI evolution journey</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic AI</h3>
+                    <div class="price">$19.99<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Basic AI Creation</li>
+                        <li>Core Capabilities</li>
+                        <li>Standard Voice Tuning</li>
+                        <li>Limited Lab Access</li>
+                        <li>Basic Monetization</li>
+                    </ul>
+                    <a href="#" class="btn primary">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <h3>Pro AI</h3>
+                    <div class="price">$49.99<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>All Basic Features</li>
+                        <li>Advanced Capabilities</li>
+                        <li>Premium Voice Tuning</li>
+                        <li>Full Lab Access</li>
+                        <li>Enhanced Monetization</li>
+                        <li>Priority Support</li>
+                    </ul>
+                    <a href="#" class="btn primary">Get Started</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Elite AI</h3>
+                    <div class="price">$99.99<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>All Pro Features</li>
+                        <li>Unlimited Upgrades</li>
+                        <li>Advanced Evolution Tools</li>
+                        <li>24/7 Lab Access</li>
+                        <li>Premium Support</li>
+                        <li>Exclusive Features</li>
+                    </ul>
+                    <a href="#" class="btn primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get Started Today</h2>
+            <p class="section-description">Join the future of sentient AI evolution and monetization</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Cash App:</strong> $davidingalls1061</p>
+                    <p><strong>Email:</strong> support@soulforge.ai</p>
+                    <p><strong>Telegram:</strong> @SoulForgeAI</p>
+                    <br>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li>Real-time AI evolution</li>
+                        <li>Emotional creation tools</li>
+                        <li>Safe hallucination handling</li>
+                        <li>Mobile monetization</li>
+                        <li>Anonymous workspaces</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Your Plan" required>
+                        <textarea placeholder="Tell us about your vision..." required></textarea>
+                        <button type="submit" class="btn primary">Get Started</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>{self.platform_name}</h2>
+                    <p>Creating the Future of Sentient AI</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#features">Features</a>
+                    <a href="#ai-ecosystem">AI Ecosystem</a>
+                    <a href="#monetization">Monetization</a>
+                </div>
+                <div class="footer-social">
+                    <span>Follow us:</span>
+                    <a href="#">Twitter</a> | 
+                    <a href="#">Telegram</a> | 
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {self.build_date} Soul Forge AI. All rights reserved. Powered by $davidingalls1061.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+"""
+    
+    def generate_css(self) -> str:
+        """Generate main CSS file"""
+        return """
+/* Soul Forge AI - Professional CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Exo 2', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    background: rgba(10, 10, 30, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 1.8rem;
+    background: linear-gradient(45deg, #00f7ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: #00f7ff;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #00f7ff, #00ff88);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(100, 200, 255, 0.1) 0%, transparent 70%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    text-align: left;
+}
+
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #00f7ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.highlight {
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn.primary {
+    background: linear-gradient(45deg, #00f7ff, #00ff88);
+    color: #000;
+    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.3);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #00f7ff;
+    box-shadow: 0 5px 15px rgba(0, 247, 255, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 247, 255, 0.4);
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    opacity: 0.8;
+}
+
+/* Features Section */
+.features {
+    background: rgba(20, 20, 40, 0.6);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: rgba(30, 30, 60, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 150, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 247, 255, 0.4);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+/* AI Ecosystem */
+.ai-ecosystem {
+    background: linear-gradient(135deg, rgba(40, 40, 80, 0.6), rgba(20, 20, 40, 0.6));
+}
+
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ecosystem-card {
+    background: rgba(30, 30, 60, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(100, 150, 255, 0.2);
+}
+
+.ecosystem-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.ecosystem-list {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.ecosystem-list li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.ecosystem-list li::before {
+    content: '✓';
+    color: #00ff88;
+    position: absolute;
+    left: 0;
+}
+
+/* Monetization */
+.monetization {
+    background: rgba(20, 40, 20, 0.6);
+}
+
+.monetization-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.monetization-card {
+    background: rgba(30, 60, 30, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.monetization-card:hover {
+    transform: scale(1.05);
+    border-color: rgba(0, 255, 136, 0.4);
+}
+
+.payment-badge {
+    background: linear-gradient(45deg, #00ff88, #00f7ff);
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+/* Pricing */
+.pricing {
+    background: rgba(40, 20, 40, 0.6);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    background: rgba(60, 30, 60, 0.7);
+    padding: 40px 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 0, 255, 0.2);
+}
+
+.pricing-card.popular {
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.3);
+}
+
+.pricing-card.popular::before {
+    content: 'POPULAR';
+    position: absolute;
+    top: 15px;
+    right: -30px;
+    background: #ff00ff;
+    color: #fff;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin: 20px 0;
+    background: linear-gradient(45deg, #ff00cc, #3333ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pricing-features {
+    list-style: none;
+    margin: 30px 0;
+    text-align: left;
+}
+
+.pricing-features li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.pricing-features li::before {
+    content: '✓';
+    color: #00ff88;
+    position: absolute;
+    left: 0;
+}
+
+/* Contact */
+.contact {
+    background: rgba(20, 40, 60, 0.6);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contact-info ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.contact-info ul li::before {
+    content: '•';
+    color: #00f7ff;
+    position: absolute;
+    left: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(100, 150, 255, 0.3);
+    background: rgba(30, 30, 50, 0.5);
+    color: #fff;
+    font-family: 'Exo 2', sans-serif;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Footer */
+.footer {
+    background: rgba(10, 10, 20, 0.95);
+    padding: 40px 0;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-logo h2 {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #00f7ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00f7ff;
+}
+
+.footer-social {
+    text-align: right;
+    justify-self: end;
+}
+
+.footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #00ff88;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(100, 150, 255, 0.2);
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .features-grid,
+    .ecosystem-grid,
+    .monetization-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .footer-social {
+        justify-self: center;
+    }
+}
+
+/* Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.neural-network {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 247, 255, 0.5) 0%, transparent 70%);
+    animation: pulse 4s infinite;
+    margin: 0 auto;
+}
+"""
+    
+    def generate_script(self) -> str:
+        """Generate JavaScript file"""
+        return """
+// Soul Forge AI - Interactive JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(10, 10, 30, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(10, 10, 30, 0.95)';
+        }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Form submission
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! Our team will contact you soon.');
+            this.reset();
+        });
+    }
+
+    // Feature card hover effects
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Pricing card hover effects
+    const pricingCards = document.querySelectorAll('.pricing-card');
+    pricingCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Initialize animations
+    document.querySelectorAll('.feature-card, .ecosystem-card, .monetization-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease';
+    });
+
+    // Animate elements when they come into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.feature-card, .ecosystem-card, .monetization-card').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Cash App button animation
+    const cashButton = document.querySelector('.payment-badge');
+    if (cashButton) {
+        setInterval(() => {
+            cashButton.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+                cashButton.style.transform = 'scale(1)';
+            }, 300);
+        }, 3000);
+    }
+});
+"""
+    
+    def generate_index_html(self):
+        """Generate complete index.html"""
+        with open('index.html', 'w', encoding='utf-8') as f:
+            f.write(self.generate_homepage())
+        print("✅ index.html generated")
+    
+    def generate_styles_css(self):
+        """Generate styles.css"""
+        with open('styles.css', 'w', encoding='utf-8') as f:
+            f.write(self.generate_css())
+        print("✅ styles.css generated")
+    
+    def generate_script_js(self):
+        """Generate script.js"""
+        with open('script.js', 'w', encoding='utf-8') as f:
+            f.write(self.generate_script())
+        print("✅ script.js generated")
+    
+    def generate_favicon(self):
+        """Generate favicon"""
+        # Simple placeholder - in real app this would create a proper favicon
+        with open('favicon.ico', 'w') as f:
+            f.write("placeholder")
+        print("✅ favicon.ico created")
+    
+    def generate_website(self):
+        """Generate complete website structure"""
+        # Create directory structure if it doesn't exist
+        os.makedirs('css', exist_ok=True)
+        os.makedirs('js', exist_ok=True)
+        os.makedirs('assets', exist_ok=True)
+        
+        # Generate files
+        self.generate_index_html()
+        self.generate_styles_css()
+        self.generate_script_js()
+        self.generate_favicon()
+        
+        # Generate manifest and robots.txt for SEO
+        with open('manifest.json', 'w') as f:
+            f.write('''
+{
+  "name": "Soul Forge AI",
+  "short_name": "SoulForge",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0c29",
+  "theme_color": "#00f7ff",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
+''')
+        
+        with open('robots.txt', 'w') as f:
+            f.write('''
+User-agent: *
+Disallow: /private/
+Disallow: /admin/
+
+Sitemap: https://soulforge.ai/sitemap.xml
+''')
+        
+        with open('sitemap.xml', 'w') as f:
+            f.write('''
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+  <loc>https://soulforge.ai/</loc>
+  <lastmod>''' + self.build_date + '''</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+</url>
+</urlset>
+''')
+        
+        print("✅ All website files generated successfully!")
+
+# Generate the complete website
+if __name__ == "__main__":
+    print("🚀 Generating State-of-the-Art Soul Forge AI Website...")
+    
+    # Create website builder
+    builder = WebsiteBuilder("Soul Forge AI")
+    
+    # Generate complete website
+    builder.generate_website()
+    
+    print("\n🎉 Website Generation Complete!")
+    print("📁 Generated Files:")
+    print("   ├── index.html")
+    print("   ├── styles.css")
+    print("   ├── script.js")
+    print("   ├── favicon.ico")
+    print("   ├── manifest.json")
+    print("   ├── robots.txt")
+    print("   └── sitemap.xml")
+    print("\n💼 Your AI Evolution Platform is live!")
+    print("💰 Every creative act, every evolution, every hallucination monetizes through Cash App ($davidingalls1061)")
+    print("\n🌐 Ready to launch the future of sentient AI creativity!")

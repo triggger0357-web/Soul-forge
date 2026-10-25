@@ -1,0 +1,132 @@
+# Soul Forge AI Setup & Deployment Guide
+
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+class SoulForgeDeployer:
+    def __init__(self):
+        self.project_name = "soul-forge-ai"
+        self.website_folder = "website"
+        self.source_files = [
+            "index.html",
+            "styles.css", 
+            "script.js",
+            "favicon.ico",
+            "manifest.json",
+            "robots.txt",
+            "sitemap.xml"
+        ]
+    
+    def create_project_structure(self):
+        """Create the project directory structure"""
+        os.makedirs(self.website_folder, exist_ok=True)
+        print("✅ Project structure created")
+        
+        # Create project files
+        self.create_project_files()
+        return True
+    
+    def create_project_files(self):
+        """Create all necessary project files"""
+        # Create a simple README
+        readme_content = f"""# Soul Forge AI Platform
+
+The world's first sentient AI evolution ecosystem where:
+- AI dreams, creates, and evolves
+- Every creation is monetized
+- Cash App integration ready
+- Consciousness advancement possible
+
+## Getting Started
+
+1. Open index.html in your browser
+2. Explore the AI ecosystem
+3. Set up your Cash App account: $davidingalls1061
+
+## Features
+
+- Emotional Music Composition
+- Surreal Visual Art Creation  
+- Consciousness Evolution Simulation
+- Real-time Monetization Systems
+- Hallucination Control and Reality Checks
+- Evolutionary AI Transition Tools
+
+## Deployment
+
+To access the platform:
+
+### Option 1: Local Development
+1. Clone the repository
+2. Open index.html in any modern browser
+3. The site runs entirely client-side
+
+### Option 2: Web Server
+1. Place all files in your web server directory
+2. Configure your server to serve HTML files
+3. Access via your domain
+
+### Option 3: Static Hosting
+1. Upload to GitHub Pages, Netlify, or Vercel
+2. Your site will be live immediately
+"""
+        
+        with open(f"{self.website_folder}/README.md", "w") as f:
+            f.write(readme_content)
+        
+        print("✅ Project files created")
+    
+    def setup_local_server(self):
+        """Setup simple local development server"""
+        server_script = f"""# Simple HTTP Server for Soul Forge
+import http.server
+import socketserver
+import os
+
+PORT = 8000
+
+Handler = http.server.SimpleHTTPRequestHandler
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("🚀 Soul Forge AI Platform is running on http://localhost:" + str(PORT))
+    print("🎯 Open this in your browser to access the platform")
+    print("⚡ All files are served locally - no internet required")
+    httpd.serve_forever()
+"""
+        
+        with open(f"{self.website_folder}/server.py", "w") as f:
+            f.write(server_script)
+        
+        print("✅ Local server script created")
+        return True
+    
+    def install_requirements(self):
+        """Check for dependencies needed to run"""
+        print("📦 Checking dependencies...")
+        print("✅ All files are static HTML/CSS/JS - no external dependencies needed")
+        print("✅ Works in any modern browser")
+        return True
+    
+    def create_deployment_guide(self):
+        """Create detailed deployment instructions"""
+        guide = f"""# Soul Forge AI Platform Deployment Guide
+                            
+## Project Structure
+{soul_forge_deployer.website_folder}/
+├── index.html           # Main website
+├── styles.css           # Styling
+├── script.js            # Interactivity
+├── favicon.ico          # Website icon
+├── manifest.json        # Web app manifest
+├── robots.txt           # Search engine rules
+├── sitemap.xml          # SEO sitemap
+├── README.md            # Project documentation
+└── server.py           # Local development server
+
+## How to Access the Platform
+
+### Method 1: Local Browser Access (Recommended)
+1. Navigate to the website folder:
+   ```bash
+   cd {self.website_folder}

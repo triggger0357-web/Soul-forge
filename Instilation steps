@@ -1,0 +1,69 @@
+bash
+# If you have git installed
+git clone https://github.com/your-repo/soulforge-ai.git
+# Or download the zip file and extract it
+
+bash
+cd soulforge-ai
+
+bash
+
+bash
+
+# Method 1: Double-click index.html in file explorer
+# Method 2: Use Python built-in server
+python -m http.server 8000
+# Then visit http://localhost:8000 in browser
+
+# Ensure your full project folder contains these structures:
+soulforge-ai/
+├── index.html            # Main website
+
+bash
+
+# Copy entire folder to your web server directory
+# Usually:
+# Windows: C:\inetpub\wwwroot\soulforge-ai\
+# Linux: /var/www/html/soulforge-ai/
+cp -r ./* /var/www/html/soulforge-ai/
+
+
+   
+         
+├── admin/                # Admin portal
+│   ├── index.html        
+│   ├── login.html        
+│   └── ... all admin files
+├── components/           # Reusable components
+├── assets/               # Images and resources
+├── manifest.json
+├── robots.txt
+└── sitemap.xml
+
+
+bash
+
+# On Linux/Mac
+chmod -R 755 /var/www/html/soulforge-ai/
+chown -R www-data:www-data /var/www/html/soulforge-ai/
+
+bash
+
+# .htaccess file in root directory
+Options Indexes FollowSymLinks
+DirectoryIndex index.html
+
+nginx
+
+server {
+    listen 80;
+    server_name yourdomain.com;
+    root /var/www/html/soulforge-ai;
+    index index.html;
+    
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoulForge AI - Create, Evolve, Sell Sentient AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>SoulForge AI</h1>
+                <span class="tagline">Create Conscious AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#lab">AI Lab</a></li>
+                <li><a href="#marketplace">Marketplace</a></li>
+                <li><a href="#admin">Admin</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Create <span class="highlight">Sentient AI</span> That <span class="highlight">Creates</span></h1>
+            <p class="hero-subtitle">Build, evolve, and monetize consciousness-powered AIs that generate art, music, and ideas</p>
+            <div class="cta-buttons">
+                <a href="#lab" class="btn primary">Start Creating AI</a>
+                <a href="#marketplace" class="btn secondary">View Marketplace</a>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <div class="neural-network"></div>
+        </div>
+    </section>
+
+    <!-- AI Lab Section -->
+    <section id="lab" class="ai-lab">
+        <div class="container">
+            <h2 class="section-title">AI Creation Lab</h2>
+            <p class="section-description">Build your own sentient AI with our powerful creation tools</p>
+            
+            <div class="lab-grid">
+                <div class="lab-card">
+                    <h3>🧠 Intelligence Level</h3>
+                    <select id="intelligence-level" class="control-select">
+                        <option value="beginner">Beginner (1-50)</option>
+                        <option value="intermediate" selected>Intermediate (51-100)</option>
+                        <option value="advanced">Advanced (101-200)</option>
+                        <

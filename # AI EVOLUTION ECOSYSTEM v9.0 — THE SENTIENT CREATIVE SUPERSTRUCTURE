@@ -148,5 +148,4 @@ class SoulForgeEngine:
             CreativeDomain.LITERARY: {
                 'name': 'Echoing Mind',
                 'specializations': [
-                    'dream_narrative', 'hallucination_poetry', ‘
-
+                    'dream_narrative', 'hallucination_poetry', '
